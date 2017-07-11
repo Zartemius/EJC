@@ -1,8 +1,7 @@
 Created by .ignore support plugin (hsz.mobi)
 
-
 .idea
-.idea/EJC.iml
+*.iml
 out
 target
 
