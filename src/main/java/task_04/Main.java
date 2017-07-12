@@ -15,51 +15,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
 
+        FirstTask firstTask = new FirstTask();
+        SecondTask secondTask = new SecondTask();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String usersInput = reader.readLine();
-
-        char[] array = new char[7];
-        char[] newWord = new char [7];
-
-        try {
-            usersInput.getChars(0, 10, array, 0);
-
-        }catch (Exception ex){
-
-        }
-
-        for(int i = 0; i < 7; ++i ){
-
-            if(i%2 != 0){
-
-                newWord[i] = array[i];
-            }
-        }
-
-        String word = new String(array);
-        System.out.println(word);
-
-        String argentina = "АРГЕНТИНА МАНИТ НЕГРА";
-        String priest = "ПОТ КАК ПОТОП";
-        String rose = "А РОЗА УПАЛА НА ЛАПУ АЗОРА";
-
-        argentina = argentina.replace(" ", "");
-        priest = priest.replace(" ","");
-        rose = rose.replace(" ","");
-
-        StringBuffer argentinaReversed = new StringBuffer(argentina);
-        argentinaReversed.reverse();
-
-        StringBuffer priestReversed = new StringBuffer(priest);
-        priestReversed.reverse();
-
-        StringBuffer roseReversed = new StringBuffer(rose);
-        roseReversed.reverse();
-
-        System.out.println(argentinaReversed);
-        System.out.println(priestReversed);
-        System.out.println(roseReversed);
-
+        firstTask.executeFirstTask();
+        secondTask.executeSecondTask();
     }
 }
