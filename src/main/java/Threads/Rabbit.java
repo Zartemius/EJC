@@ -2,21 +2,17 @@ package Threads;
 
 import java.io.IOException;
 
-/**
- * Created by artem on 18.07.17.
- */
 public class Rabbit {
 
     public volatile static boolean flag = true;
 
     public static void main(String[] args) {
 
-        new Rabbit.rabbieIsEatingCarrot().start();
-        new Rabbit.stopDinnerofRabbit().start();
+        new Rabbit.RabbieIsEatingCarrot().start();
+        new Rabbit.StopDinnerOfRabbit().start();
     }
 
-    public static class rabbieIsEatingCarrot extends Thread {
-
+    public static class RabbieIsEatingCarrot extends Thread {
         @Override
         public void run() {
             System.err.println("Rabbit is eating carrot");
@@ -26,7 +22,7 @@ public class Rabbit {
         }
     }
 
-    public static class stopDinnerofRabbit extends Thread {
+    public static class StopDinnerOfRabbit extends Thread {
         @Override
         public void run() {
             System.err.println("Enter whatever you want to stop eating of carrot by the rabbit");

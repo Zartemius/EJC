@@ -1,6 +1,5 @@
 package Threads;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,9 +12,9 @@ public class Supermarket {
 
         int userAnswer = 0;
         System.out.print("How many sausages Barsik should buy this time: ");
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             userAnswer = Integer.parseInt(reader.readLine());
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
