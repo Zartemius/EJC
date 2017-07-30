@@ -1,13 +1,12 @@
-package task_05;
+package Algorithms;
 
 import java.util.Random;
 
-public class Sorting_task17_1 {
+public class BinarySearch {
 
     private static final int ARRAY_SIZE = 100;
-    Random randNumber = new Random();
-    private int[] arrayA = new int[ARRAY_SIZE];
-    private int[] arrayB = new int[ARRAY_SIZE];
+    private Random randNumber = new Random();
+    private int[] arrayUsedForSortingAndFindingElement = new int[ARRAY_SIZE];
 
     private void fillArray(int[] array) {
 
@@ -55,67 +54,29 @@ public class Sorting_task17_1 {
         }
     }
 
-    public void executeBubbleSortandFindElement() {
+    public void executeBubbleSortandFindElement(int[] array) {
 
-        fillArray(arrayA);
+        fillArray(array);
         System.out.print("Before bubble sort: ");
-        showElementsOfArray(arrayA);
+        showElementsOfArray(array);
 
         for (int a = 0; a < ARRAY_SIZE; ++a) {
             for (int b = ARRAY_SIZE - 1; b > a; --b) {
-                if (arrayA[b - 1] > arrayA[b]) {
-                    int temp = arrayA[b];
-                    arrayA[b] = arrayA[b - 1];
-                    arrayA[b - 1] = temp;
+                if (array[b - 1] > array[b]) {
+                    int temp = array[b];
+                    array[b] = array[b - 1];
+                    array[b - 1] = temp;
                 }
             }
         }
 
         System.out.print("After Bubble sort: ");
-        showElementsOfArray(arrayA);
-        findElement(arrayA);
+        showElementsOfArray(array);
+        findElement(array);
     }
 
-    public void executeInsertionSortandFindELement() {
+    public void executeBinarySearch(){
 
-        fillArray(arrayB);
-        System.out.print("Before Insertion Sort: ");
-        showElementsOfArray(arrayB);
-
-        for (int out = 1; out < ARRAY_SIZE; ++out) {
-            int temp = arrayB[out];
-            int in = out;
-            while (in > 0 && arrayB[in - 1] >= temp) {
-                arrayB[in] = arrayB[in - 1];
-                --in;
-            }
-            arrayB[in] = temp;
-        }
-
-        System.out.print("After Insertion Sort :");
-        showElementsOfArray(arrayB);
-        findElement(arrayB);
-    }
-
-    public void mergeSort() {
-
-        int sizeOfArray = (ARRAY_SIZE * 2) + 2;
-        int[] arrayC = new int[sizeOfArray];
-        int arrA = 0;
-        int arrB = 0;
-        int arrC = 0;
-
-        while (arrA < ARRAY_SIZE && arrB < ARRAY_SIZE) {
-
-            if (arrayA[arrA++] < arrayB[arrB++]) {
-                arrayC[arrC++] = arrayA[arrA++];
-            } else {
-                arrayC[arrC++] = arrayB[arrB++];
-            }
-        }
-        System.out.print("After merge:");
-        for (int i = 0; i < sizeOfArray; ++i) {
-            System.out.print(arrayC[i] + " ");
-        }
+        executeBubbleSortandFindElement(arrayUsedForSortingAndFindingElement);
     }
 }
